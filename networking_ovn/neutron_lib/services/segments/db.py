@@ -344,11 +344,14 @@ def subscribe():
                        resources.AGENT,
                        events.AFTER_UPDATE)
     print "macauley TODO"
-    #registry.subscribe(_add_segment_host_mapping_for_segment,
-    #                   resources.SEGMENT, events.PRECOMMIT_CREATE)
-
-    #registry.subscribe(_delete_segments_for_network,
-    #                   resources.NETWORK,
+    registry.subscribe(_add_segment_host_mapping_for_segment,
+                       resources.SEGMENT, 
+    #                    events.PRECOMMIT_CREATE)
+                       events.BEFORE_CRETAE)
+                        
+    registry.subscribe(_delete_segments_for_network,
+                       resources.NETWORK,
     #                   events.PRECOMMIT_DELETE)
+                       events.BEFORE_DELETE)
 
-subscribe()
+#subscribe()

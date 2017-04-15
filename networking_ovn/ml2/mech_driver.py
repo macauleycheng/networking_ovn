@@ -41,6 +41,7 @@ from neutron.plugins.common import constants as plugin_const
 from neutron.plugins.ml2 import driver_api
 from neutron.services.qos import qos_consts
 #from neutron.services.segments import db as segment_service_db
+from networking_ovn.neutron_lib.services.segments import db as segment_service_db
 
 from networking_ovn._i18n import _, _LI, _LW
 from networking_ovn.common import acl as ovn_acl
@@ -103,8 +104,7 @@ class OVNMechanismDriver(driver_api.MechanismDriver):
         self._setup_vif_port_bindings()
         self.subscribe()
         self.qos_driver = qos_driver.OVNQosDriver(self)
-        print "macauley TODO"
-        self.trunk_driver = trunk_driver.OVNTrunkDriver.create(self)
+        #self.trunk_driver = trunk_driver.OVNTrunkDriver.create(self)
 
     @property
     def _plugin(self):
@@ -137,13 +137,15 @@ class OVNMechanismDriver(driver_api.MechanismDriver):
 
     def subscribe(self):
         print "macauley TODO"
-        #registry.subscribe(self.post_fork_initialize,
-        #                   resources.PROCESS,
-        #                   events.AFTER_INIT)
+        registry.subscribe(self.post_fork_initialize,
+                           resources.PROCESS,
+        #                  events.AFTER_INIT)
+                           events.AFTER_CREATE)
 
         #registry.subscribe(self._add_segment_host_mapping_for_segment,
         #                   resources.SEGMENT,
         #                   events.PRECOMMIT_CREATE)
+        #                   events.AFTER_CREATE)
 
         # Handle security group/rule notifications
         if self.sg_enabled:

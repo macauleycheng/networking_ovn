@@ -20,7 +20,7 @@ from networking_ovn.neutron_lib import constants
 from networking_ovn.neutron_lib import exceptions as nexception
 
 #from neutron._i18n import _
-from networking_ovn.neutron_lib._i18n import _
+from networking_ovn._i18n import _
 #from neutron.api import extensions
 from networking_ovn.neutorn_lib.api import extensions
 

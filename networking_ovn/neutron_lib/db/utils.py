@@ -16,7 +16,7 @@ from networking_ovn.neutron_lib import exceptions as n_exc
 from sqlalchemy.orm import properties
 
 #from neutron_lib._i18n import _
-from networking_ovn.neutron_lib._i18n import _
+from networking_ovn._i18n import _
 from oslo_db import exception as db_exc
 from oslo_utils import excutils
 from sqlalchemy.orm import exc

@@ -12,7 +12,7 @@
 
 import six
 
-from networking_ovn.neutron_lib._i18n import _
+from networking_ovn._i18n import _
 from networking_ovn.neutron_lib import exceptions as n_exc
 
 

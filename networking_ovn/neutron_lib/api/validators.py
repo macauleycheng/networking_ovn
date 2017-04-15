@@ -20,7 +20,7 @@ from oslo_log import log as logging
 from oslo_utils import uuidutils
 import six
 
-from networking_ovn.neutron_lib._i18n import _
+from networking_ovn._i18n import _
 from networking_ovn.neutron_lib.api import converters
 from networking_ovn.neutron_lib import constants
 from networking_ovn.neutron_lib import exceptions as n_exc
